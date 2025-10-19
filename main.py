@@ -24,8 +24,10 @@ async def root():
         content={
             "status_code": 200,
             "message": "Currency Converter API",
-            "developer": "El Impaciente",
-            "telegram_channel": "https://t.me/Apisimpacientes",
+            "developer": "Emmanuel Fantasma - Tutoriales para Ciegos",
+            "telegram_channel": "https://t.me/TutorialesParaCiegos",
+            "youtube_channel": "https://youtube.com/@tutorialesparaciegos?si=HYda8Dikd6sL_TC9",
+            "follow_us": "Síguenos y suscríbete en nuestro canal de YouTube. Síguenos para más contenido. Gracias.",
             "version": "1.0.0",
             "endpoints": {
                 "/currencies": "Get list of all available currencies",
@@ -63,8 +65,9 @@ async def get_currencies():
                     "status_code": 200,
                     "total_currencies": len(currencies_data),
                     "currencies": currencies_data,
-                    "developer": "El Impaciente",
-                    "telegram_channel": "https://t.me/Apisimpacientes"
+                    "developer": "Emmanuel Fantasma - Tutoriales para Ciegos",
+                    "telegram_channel": "https://t.me/TutorialesParaCiegos",
+                    "youtube_channel": "https://youtube.com/@tutorialesparaciegos?si=HYda8Dikd6sL_TC9"
                 },
                 status_code=200
             )
@@ -74,8 +77,9 @@ async def get_currencies():
             content={
                 "status_code": 408,
                 "message": "Request timeout. The external API took too long to respond",
-                "developer": "El Impaciente",
-                "telegram_channel": "https://t.me/Apisimpacientes"
+                "developer": "Emmanuel Fantasma - Tutoriales para Ciegos",
+                "telegram_channel": "https://t.me/TutorialesParaCiegos",
+                "youtube_channel": "https://youtube.com/@tutorialesparaciegos?si=HYda8Dikd6sL_TC9"
             },
             status_code=408
         )
@@ -85,8 +89,9 @@ async def get_currencies():
                 "status_code": 500,
                 "message": "Error fetching currencies list",
                 "error": str(e),
-                "developer": "El Impaciente",
-                "telegram_channel": "https://t.me/Apisimpacientes"
+                "developer": "Emmanuel Fantasma - Tutoriales para Ciegos",
+                "telegram_channel": "https://t.me/TutorialesParaCiegos",
+                "youtube_channel": "https://youtube.com/@tutorialesparaciegos?si=HYda8Dikd6sL_TC9"
             },
             status_code=500
         )
@@ -98,8 +103,9 @@ async def get_rates(currency: str = Query(default="", description="Base currency
             content={
                 "status_code": 400,
                 "message": "Parameter 'currency' is required",
-                "developer": "El Impaciente",
-                "telegram_channel": "https://t.me/Apisimpacientes",
+                "developer": "Emmanuel Fantasma - Tutoriales para Ciegos",
+                "telegram_channel": "https://t.me/TutorialesParaCiegos",
+                "youtube_channel": "https://youtube.com/@tutorialesparaciegos?si=HYda8Dikd6sL_TC9",
                 "example": "/rates?currency=USD"
             },
             status_code=400
@@ -125,8 +131,9 @@ async def get_rates(currency: str = Query(default="", description="Base currency
                     content={
                         "status_code": 400,
                         "message": f"Currency '{currency.upper()}' not found or invalid",
-                        "developer": "El Impaciente",
-                        "telegram_channel": "https://t.me/Apisimpacientes"
+                        "developer": "Emmanuel Fantasma - Tutoriales para Ciegos",
+                        "telegram_channel": "https://t.me/TutorialesParaCiegos",
+                        "youtube_channel": "https://youtube.com/@tutorialesparaciegos?si=HYda8Dikd6sL_TC9"
                     },
                     status_code=400
                 )
@@ -141,8 +148,9 @@ async def get_rates(currency: str = Query(default="", description="Base currency
                     "date": date,
                     "rates": base_currency,
                     "total_rates": len(base_currency),
-                    "developer": "El Impaciente",
-                    "telegram_channel": "https://t.me/Apisimpacientes"
+                    "developer": "Emmanuel Fantasma - Tutoriales para Ciegos",
+                    "telegram_channel": "https://t.me/TutorialesParaCiegos",
+                    "youtube_channel": "https://youtube.com/@tutorialesparaciegos?si=HYda8Dikd6sL_TC9"
                 },
                 status_code=200
             )
@@ -152,8 +160,9 @@ async def get_rates(currency: str = Query(default="", description="Base currency
             content={
                 "status_code": 408,
                 "message": "Request timeout. The external API took too long to respond",
-                "developer": "El Impaciente",
-                "telegram_channel": "https://t.me/Apisimpacientes"
+                "developer": "Emmanuel Fantasma - Tutoriales para Ciegos",
+                "telegram_channel": "https://t.me/TutorialesParaCiegos",
+                "youtube_channel": "https://youtube.com/@tutorialesparaciegos?si=HYda8Dikd6sL_TC9"
             },
             status_code=408
         )
@@ -163,8 +172,9 @@ async def get_rates(currency: str = Query(default="", description="Base currency
                 "status_code": 500,
                 "message": "Error fetching exchange rates",
                 "error": str(e),
-                "developer": "El Impaciente",
-                "telegram_channel": "https://t.me/Apisimpacientes"
+                "developer": "Emmanuel Fantasma - Tutoriales para Ciegos",
+                "telegram_channel": "https://t.me/TutorialesParaCiegos",
+                "youtube_channel": "https://youtube.com/@tutorialesparaciegos?si=HYda8Dikd6sL_TC9"
             },
             status_code=500
         )
@@ -180,8 +190,9 @@ async def convert_currency(
             content={
                 "status_code": 400,
                 "message": "Parameter 'from' is required",
-                "developer": "El Impaciente",
-                "telegram_channel": "https://t.me/Apisimpacientes",
+                "developer": "Emmanuel Fantasma - Tutoriales para Ciegos",
+                "telegram_channel": "https://t.me/TutorialesParaCiegos",
+                "youtube_channel": "https://youtube.com/@tutorialesparaciegos?si=HYda8Dikd6sL_TC9",
                 "example": "/convert?amount=100&from=USD&to=EUR"
             },
             status_code=400
@@ -192,8 +203,9 @@ async def convert_currency(
             content={
                 "status_code": 400,
                 "message": "Parameter 'to' is required",
-                "developer": "El Impaciente",
-                "telegram_channel": "https://t.me/Apisimpacientes",
+                "developer": "Emmanuel Fantasma - Tutoriales para Ciegos",
+                "telegram_channel": "https://t.me/TutorialesParaCiegos",
+                "youtube_channel": "https://youtube.com/@tutorialesparaciegos?si=HYda8Dikd6sL_TC9",
                 "example": "/convert?amount=100&from=USD&to=EUR"
             },
             status_code=400
@@ -204,8 +216,9 @@ async def convert_currency(
             content={
                 "status_code": 400,
                 "message": "Parameter 'amount' must be greater than 0",
-                "developer": "El Impaciente",
-                "telegram_channel": "https://t.me/Apisimpacientes",
+                "developer": "Emmanuel Fantasma - Tutoriales para Ciegos",
+                "telegram_channel": "https://t.me/TutorialesParaCiegos",
+                "youtube_channel": "https://youtube.com/@tutorialesparaciegos?si=HYda8Dikd6sL_TC9",
                 "example": "/convert?amount=100&from=USD&to=EUR"
             },
             status_code=400
@@ -232,8 +245,9 @@ async def convert_currency(
                     content={
                         "status_code": 400,
                         "message": f"Source currency '{from_currency.upper()}' not found or invalid",
-                        "developer": "El Impaciente",
-                        "telegram_channel": "https://t.me/Apisimpacientes"
+                        "developer": "Emmanuel Fantasma - Tutoriales para Ciegos",
+                        "telegram_channel": "https://t.me/TutorialesParaCiegos",
+                        "youtube_channel": "https://youtube.com/@tutorialesparaciegos?si=HYda8Dikd6sL_TC9"
                     },
                     status_code=400
                 )
@@ -245,8 +259,9 @@ async def convert_currency(
                     content={
                         "status_code": 400,
                         "message": f"Target currency '{to_currency.upper()}' not found or invalid",
-                        "developer": "El Impaciente",
-                        "telegram_channel": "https://t.me/Apisimpacientes"
+                        "developer": "Emmanuel Fantasma - Tutoriales para Ciegos",
+                        "telegram_channel": "https://t.me/TutorialesParaCiegos",
+                        "youtube_channel": "https://youtube.com/@tutorialesparaciegos?si=HYda8Dikd6sL_TC9"
                     },
                     status_code=400
                 )
@@ -269,8 +284,9 @@ async def convert_currency(
                     "exchange_rate": exchange_rate,
                     "date": date,
                     "calculation": f"{amount} {from_currency.upper()} × {exchange_rate} = {round(converted_amount, 2)} {to_currency.upper()}",
-                    "developer": "El Impaciente",
-                    "telegram_channel": "https://t.me/Apisimpacientes"
+                    "developer": "Emmanuel Fantasma - Tutoriales para Ciegos",
+                    "telegram_channel": "https://t.me/TutorialesParaCiegos",
+                    "youtube_channel": "https://youtube.com/@tutorialesparaciegos?si=HYda8Dikd6sL_TC9"
                 },
                 status_code=200
             )
@@ -280,8 +296,9 @@ async def convert_currency(
             content={
                 "status_code": 408,
                 "message": "Request timeout. The external API took too long to respond",
-                "developer": "El Impaciente",
-                "telegram_channel": "https://t.me/Apisimpacientes"
+                "developer": "Emmanuel Fantasma - Tutoriales para Ciegos",
+                "telegram_channel": "https://t.me/TutorialesParaCiegos",
+                "youtube_channel": "https://youtube.com/@tutorialesparaciegos?si=HYda8Dikd6sL_TC9"
             },
             status_code=408
         )
@@ -291,8 +308,9 @@ async def convert_currency(
                 "status_code": 500,
                 "message": "Error performing currency conversion",
                 "error": str(e),
-                "developer": "El Impaciente",
-                "telegram_channel": "https://t.me/Apisimpacientes"
+                "developer": "Emmanuel Fantasma - Tutoriales para Ciegos",
+                "telegram_channel": "https://t.me/TutorialesParaCiegos",
+                "youtube_channel": "https://youtube.com/@tutorialesparaciegos?si=HYda8Dikd6sL_TC9"
             },
             status_code=500
         )
@@ -304,8 +322,9 @@ async def health_check():
             "status": "healthy",
             "service": "Currency Converter API - Vercel",
             "timestamp": datetime.utcnow().isoformat(),
-            "developer": "El Impaciente",
-            "telegram_channel": "https://t.me/Apisimpacientes"
+            "developer": "Emmanuel Fantasma - Tutoriales para Ciegos",
+            "telegram_channel": "https://t.me/TutorialesParaCiegos",
+            "youtube_channel": "https://youtube.com/@tutorialesparaciegos?si=HYda8Dikd6sL_TC9"
         },
         status_code=200
     )
